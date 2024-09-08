@@ -1,15 +1,22 @@
-import logo from './logo.svg';
+import { ThemeProvider } from '@emotion/react';
 import './App.css';
-import { Fragment, useContext } from 'react';
-import itemsContext from './store/items-context';
+import { CssBaseline } from '@mui/material';
+import Users from './pages/Users';
+import Admin from './pages/Admin';
+import OrderedItemsProvider from './others/OrderedItemsProvider';
 
 function App() {
-  const itemsCx = useContext(itemsContext);
+  const {switchPage} = useItemsContext();
+  const {theme} = useThemeContext();
+
   return (
-    <Fragment>
-      {itemsCx.switchPage ? <Users/>: <Admin/>}
+    <ThemeProvider theme={theme}>
+      <CssBaseline/>
+      <OrderedItemsProvider>
+        {switchPage ? <Users/> : <Admin/>}
+      </OrderedItemsProvider>
       <Footer/>
-    </Fragment>
+    </ThemeProvider>
   );
 }
 
