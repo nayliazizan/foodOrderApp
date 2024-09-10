@@ -4,6 +4,8 @@ import { CssBaseline } from '@mui/material';
 import Users from './pages/Users';
 import Admin from './pages/Admin';
 import OrderedItemsProvider from './others/OrderedItemsProvider';
+import { useItemsContext } from './others/itemsContext';
+import { useThemeContext } from './others/themeContext';
 
 function App() {
   const {switchPage} = useItemsContext();

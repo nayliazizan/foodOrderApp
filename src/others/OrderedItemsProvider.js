@@ -1,6 +1,7 @@
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import { useEffect, useState, useMemo } from "react";
 import { ORDER_ITEMS_LOCAL_STORAGE_KEY } from "../constant";
+import OrderedItemsContext from "./orderedItemsContext";
 
 export default function OrderedItemsProvider({children}){
     const initialOrderedItems = JSON.parse(localStorage.getItem(ORDER_ITEMS_LOCAL_STORAGE_KEY) || []);

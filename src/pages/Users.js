@@ -1,5 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import { useRef, useState } from "react";
+import CartProvider from "../others/CartProvider";
+import CartAppBar from "../components/users/CartAppBar";
+import Cart from "../components/users/Cart";
 
 function Users(){
     const [isModalOpen, setIsModalOpen] = useState(false);
