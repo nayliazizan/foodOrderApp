@@ -3,6 +3,8 @@ import { useRef, useState } from "react";
 import CartProvider from "../others/CartProvider";
 import CartAppBar from "../components/users/CartAppBar";
 import Cart from "../components/users/Cart";
+import Banner from "../components/users/Banner";
+import AboutUs from "../components/users/AboutUs";
 
 function Users(){
     const [isModalOpen, setIsModalOpen] = useState(false);
