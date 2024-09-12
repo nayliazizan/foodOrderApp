@@ -1,8 +1,9 @@
-import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Button } from "@mui/material";
 import { useCartContext } from "../../others/cartContext";
 import { useItemsContext } from "../../others/itemsContext";
+import PropTypes from "prop-types";
 
-export default function DeleteDialog({opne, setOpen, itemId, setDeleteItemId}){
+export default function DeleteDialog({open, setOpen, itemId, setDeleteItemId}){
     const {removeItem: removeMenuItem, itemsData} = useItemsContext();
     const {removeItem: removeCartItem} = useCartContext();
     const title = itemsData.find((item)=> item.id === itemId)?.name || itemId;

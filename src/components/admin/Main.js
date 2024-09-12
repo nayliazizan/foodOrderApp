@@ -1,5 +1,8 @@
 import { Box, Button, Divider, Typography } from "@mui/material";
 import { useState } from "react";
+import Meals from "../Meals";
+import DeleteDialog from "./DeleteDialog";
+import CartProvider from "../../others/CartProvider";
 
 function Main(){
     const [openAddItemForm, setOpenItemForm] = useState(false);
@@ -124,7 +127,7 @@ function Main(){
                 </CartProvider>
             </Box>
 
-            <AdminFoodForm
+            <FoodForm
                 key={`${editItemId}-${openAddItemForm}-${editItemId !== null}`}
                 open={openAddItemForm}
                 setOpenItemForm={setOpenItemForm}

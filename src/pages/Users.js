@@ -5,6 +5,8 @@ import CartAppBar from "../components/users/CartAppBar";
 import Cart from "../components/users/Cart";
 import Banner from "../components/users/Banner";
 import AboutUs from "../components/users/AboutUs";
+import Meals from "../components/Meals";
+import SuccessAlert from "../components/users/SuccessAlert";
 
 function Users(){
     const [isModalOpen, setIsModalOpen] = useState(false);

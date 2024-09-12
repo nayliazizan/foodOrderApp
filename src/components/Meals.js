@@ -53,3 +53,5 @@ Meals.propTypes = {
     handleEditItem: PropTypes.func,
     handleDeleteItem: PropTypes.func
 }
+
+export default Meals;

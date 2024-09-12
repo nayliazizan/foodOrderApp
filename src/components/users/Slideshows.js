@@ -1,7 +1,8 @@
 import { Box } from "@mui/material";
 import PropTypes from "prop-types";
-import {Swiper, SwiperSlide} from "swiper/react"; //need to run npm install <smtg>
-import Pagination from "swiper/modules"; //need to run npm install <smtg>
+import {Swiper, SwiperSlide} from "swiper/react"; //need to recheck
+import {Pagination} from "swiper/modules"; //need to recheck
+import 'swiper/swiper-bundle.css';
 
 function Slideshows({images}){
     return(
