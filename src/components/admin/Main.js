@@ -3,6 +3,7 @@ import { useState } from "react";
 import Meals from "../Meals";
 import DeleteDialog from "./DeleteDialog";
 import CartProvider from "../../others/CartProvider";
+import FoodForm from "./FoodForm";
 
 function Main(){
     const [openAddItemForm, setOpenItemForm] = useState(false);
