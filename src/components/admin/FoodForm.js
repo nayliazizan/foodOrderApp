@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useItemsContext } from "../../others/itemsContext";
 import { BASE_URL, MAX_FILE_SIZE } from "../../constant";
-import { FileOpen } from "@mui/icons-material";
-import { Backdrop, Button, CircularProgress, DialogActions, DialogTitle, InputAdornment, Typography } from "@mui/material";
+import { DialogTitle, InputFileUpload, Backdrop, Button, CircularProgress, DialogActions, DialogTitle, InputAdornment, Typography, Box, TextField, Dialog } from "@mui/material";
+import PropTypes from "prop-types";
+import formVerification from "../../others/formVerification";
+import { useForm } from "../../others/useForm";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -24,7 +26,7 @@ function FoodForm({open, setOpenItemForm, isEdit, editItemId}){
         formErrors,
         setFormErrors,
         resetForm
-    } = useForm(initialFormValues, formValidationSchema);
+    } = useForm(initialFormValues, formVerification);
 
     useEffect(()=>{
         if(isEdit && editItemId){
@@ -297,7 +299,7 @@ function FoodForm({open, setOpenItemForm, isEdit, editItemId}){
                 </form>
             </Dialog>
 
-            <Backdrop sx={{color: "#fff", zIndex: (theme)=> theme.zIndex.modal + 1}}>
+            <Backdrop sx={{color: "#fff", zIndex: (theme)=> theme.zIndex.modal + 1}} open={isLoading}>
                 <CircularProgress color="inherit"/>
             </Backdrop>
         </>

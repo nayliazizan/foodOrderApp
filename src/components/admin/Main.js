@@ -1,14 +1,14 @@
 import { Box, Button, Divider, Typography } from "@mui/material";
 import { useState } from "react";
 import Meals from "../Meals";
-import DeleteDialog from "./DeleteDialog";
+import DeletePopUp from "./DeletePopUp";
 import CartProvider from "../../others/CartProvider";
 import FoodForm from "./FoodForm";
 
 function Main(){
     const [openAddItemForm, setOpenItemForm] = useState(false);
     const [editItemId, setEditItemId] = useState(null);
-    const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+    const [openDeletePopUp, setOpenDeletePopUp] = useState(false);
     const [deleteItemId, setDeleteItemId] = useState(null);
     const [isOrderModalOpen, setOpenOrderModal] = useState(false);
 
@@ -23,7 +23,7 @@ function Main(){
     }
 
     function handleDeleteItem(itemId){
-        setOpenDeleteDialog(true);
+        setOpenDeletePopUp(true);
         setDeleteItemId(itemId);
     }
 
@@ -119,9 +119,9 @@ function Main(){
 
                 <CartProvider>
                     <Meals handleEditItem={handleEditItem} handleDeleteItem={handleDeleteItem}/>
-                    <DeleteDialog
-                        open={openDeleteDialog}
-                        setOpen={setOpenDeleteDialog}
+                    <DeletePopUp
+                        open={openDeletePopUp}
+                        setOpen={setOpenDeletePopUp}
                         itemId={deleteItemId}
                         setDeleteItemId={setDeleteItemId}
                     />

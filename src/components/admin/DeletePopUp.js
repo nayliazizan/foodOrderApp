@@ -3,7 +3,7 @@ import { useCartContext } from "../../others/cartContext";
 import { useItemsContext } from "../../others/itemsContext";
 import PropTypes from "prop-types";
 
-export default function DeleteDialog({open, setOpen, itemId, setDeleteItemId}){
+function DeletePopUp({open, setOpen, itemId, setDeleteItemId}){
     const {removeItem: removeMenuItem, itemsData} = useItemsContext();
     const {removeItem: removeCartItem} = useCartContext();
     const title = itemsData.find((item)=> item.id === itemId)?.name || itemId;
@@ -49,9 +49,11 @@ export default function DeleteDialog({open, setOpen, itemId, setDeleteItemId}){
     )
 }
 
-DeleteDialog.propTypes = {
+DeletePopUp.propTypes = {
     open: PropTypes.bool,
     setOpen: PropTypes.func,
     itemId: PropTypes.string,
     setDeleteItemId: PropTypes.func
 }
+
+export default DeletePopUp;
