@@ -1,5 +1,4 @@
 import { ThemeProvider } from '@mui/material/styles';
-import './App.css';
 import { CssBaseline } from '@mui/material';
 import Users from './pages/Users';
 import Admin from './pages/Admin';

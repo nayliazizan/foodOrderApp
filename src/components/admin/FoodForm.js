@@ -7,7 +7,7 @@ import formVerification from "../../others/formVerification";
 import useForm from "../../others/useForm";
 import FileUploader from "./FileUploader";
 
-const API_KEY = import.meta.env.VITE_API_KEY;
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const initialFormValues = {
     name: "",
@@ -191,7 +191,7 @@ function FoodForm({open, setOpenItemForm, isEdit, editItemId}){
                             id="name"
                             name="name"
                             value={values.name}
-                            onChange={(e)=>{handleInputChange("name", e.target.value)}}
+                            onChange={(e)=>{handleInputChange("name", e.target.value);}}
                             type="text"
                             fullWidth
                             variant="outlined"
@@ -251,7 +251,7 @@ function FoodForm({open, setOpenItemForm, isEdit, editItemId}){
                                 <Typography variant="subtitle1">
                                     Chosen file:{" "}
                                     <strong>
-                                        {values.image.row.name || values.image.raw.title}
+                                        {values.image.raw.name || values.image.raw.title}
                                     </strong>
                                 </Typography>
                             ) : (

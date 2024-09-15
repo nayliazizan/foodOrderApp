@@ -4,7 +4,7 @@ import { ORDER_ITEMS_LOCAL_STORAGE_KEY } from "../constant";
 import OrderedItemsContext from "./orderedItemsContext";
 
 export default function OrderedItemsProvider({children}){
-    const initialOrderedItems = JSON.parse(localStorage.getItem(ORDER_ITEMS_LOCAL_STORAGE_KEY) || []);
+    const initialOrderedItems = JSON.parse(localStorage.getItem(ORDER_ITEMS_LOCAL_STORAGE_KEY) || "[]");
     const [orderedItems, setOrderedItems] = useState(initialOrderedItems);
 
     const totalAmount = useMemo(() => {
@@ -12,13 +12,13 @@ export default function OrderedItemsProvider({children}){
             return 0;
         }
 
-        return OrderedItemsProvider.reduce(
+        return orderedItems.reduce(
             (acc, curr) => acc + curr.totalPriceForAllItems, 0
         );
     }, [orderedItems]);
 
     useEffect(() => {
-        localStorage.seItem(ORDER_ITEMS_LOCAL_STORAGE_KEY, JSON.stringify(orderedItems))
+        localStorage.setItem(ORDER_ITEMS_LOCAL_STORAGE_KEY, JSON.stringify(orderedItems))
     }, [orderedItems]);
 
     function addOrderItem(newItem){
