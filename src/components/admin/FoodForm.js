@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useItemsContext } from "../../others/itemsContext";
 import { BASE_URL, MAX_FILE_SIZE } from "../../constant";
-import { DialogTitle, InputFileUpload, Backdrop, Button, CircularProgress, DialogActions, DialogTitle, InputAdornment, Typography, Box, TextField, Dialog } from "@mui/material";
+import { Backdrop, Button, CircularProgress, DialogActions, DialogTitle, InputAdornment, Typography, Box, TextField, Dialog, DialogContent } from "@mui/material";
 import PropTypes from "prop-types";
 import formVerification from "../../others/formVerification";
-import { useForm } from "../../others/useForm";
+import useForm from "../../others/useForm";
+import FileUploader from "./FileUploader";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -240,7 +241,7 @@ function FoodForm({open, setOpenItemForm, isEdit, editItemId}){
                                 marginTop: "1rem"
                             }}
                         >
-                            <InputFileUpload
+                            <FileUploader
                                 handleFileChange={handleFileChange}
                                 marginRight={2}
                                 flexShrink={0}
@@ -310,7 +311,7 @@ FoodForm.propTypes = {
     open: PropTypes.bool.isRequired,
     setOpenItemForm: PropTypes.func.isRequired,
     isEdit: PropTypes.bool.isRequired,
-    editItemId: PropTypes.toString
+    editItemId: PropTypes.string
 }
 
 export default FoodForm;

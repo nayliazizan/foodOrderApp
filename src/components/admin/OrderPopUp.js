@@ -2,6 +2,7 @@ import { Button, Dialog, DialogActions, DialogContent, Typography, DialogTitle, 
 import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { useOrderedItemsContext } from "../../others/orderedItemsContext";
+import OrderItemTable from "./orderItemTable";
 
 function OrderPopUp({open, onClose}){
     const {orderedItems, totalAmount, clearOrderedItems} = useOrderedItemsContext();

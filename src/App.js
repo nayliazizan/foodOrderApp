@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@emotion/react';
+import { ThemeProvider } from '@mui/material/styles';
 import './App.css';
 import { CssBaseline } from '@mui/material';
 import Users from './pages/Users';
@@ -6,6 +6,7 @@ import Admin from './pages/Admin';
 import OrderedItemsProvider from './others/OrderedItemsProvider';
 import { useItemsContext } from './others/itemsContext';
 import { useThemeContext } from './others/themeContext';
+import Footer from './components/Footer';
 
 function App() {
   const {switchPage} = useItemsContext();

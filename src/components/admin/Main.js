@@ -4,6 +4,7 @@ import Meals from "../Meals";
 import DeletePopUp from "./DeletePopUp";
 import CartProvider from "../../others/CartProvider";
 import FoodForm from "./FoodForm";
+import OrderPopUp from "./OrderPopUp"
 
 function Main(){
     const [openAddItemForm, setOpenItemForm] = useState(false);
@@ -136,7 +137,7 @@ function Main(){
                 editItemId={editItemId}
             />
 
-            <OrderDialog open={isOrderModalOpen} onClose={closeOrderModal}/>
+            <OrderPopUp open={isOrderModalOpen} onClose={closeOrderModal}/>
         </Box>
     )
 }
