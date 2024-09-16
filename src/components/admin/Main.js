@@ -38,7 +38,7 @@ function Main(){
 
     return(
         <Box sx={{flex: 4}} paddingY={2} height={"100%"}>
-            <Box display="flex" flexDirections="column">
+            <Box display="flex" flexDirection="column">
                 <Box
                     display={"flex"}
                     justifyContent={"space-between"}

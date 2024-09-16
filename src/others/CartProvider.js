@@ -48,7 +48,7 @@ function cartReducer(state, action){
     }
 }
 
-export default function CartProvider({children}){
+function CartProvider({children}){
     const initialCartItems = JSON.parse(localStorage.getItem(CART_ITEMS_LOCAL_STORAGE_KEY)) || [];
     const [cartItems, dispatch] = useReducer(cartReducer, initialCartItems);
 
@@ -99,3 +99,5 @@ export default function CartProvider({children}){
 CartProvider.propTypes = {
     children: PropTypes.node.isRequired
 }
+
+export default CartProvider;

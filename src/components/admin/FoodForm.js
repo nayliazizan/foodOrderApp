@@ -4,7 +4,7 @@ import { BASE_URL, MAX_FILE_SIZE } from "../../constant";
 import { Backdrop, Button, CircularProgress, DialogActions, DialogTitle, InputAdornment, Typography, Box, TextField, Dialog, DialogContent } from "@mui/material";
 import PropTypes from "prop-types";
 import formVerification from "../../others/formVerification";
-import {useForm} from "../../others/useForm";
+import useForm from "../../others/useForm";
 import FileUploader from "./FileUploader";
 
 const API_KEY = process.env.REACT_APP_API_KEY;

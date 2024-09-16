@@ -2,8 +2,9 @@ import { Box } from "@mui/material";
 import PropTypes from "prop-types";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination} from "swiper/modules";
+import "./customSlideshows.css"; 
 import "swiper/css"; 
-import './customSlideshows.css';
+import "swiper/css/pagination";
 
 function Slideshows({images}){
     return(
