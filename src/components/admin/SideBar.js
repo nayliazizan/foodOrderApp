@@ -1,5 +1,4 @@
-import { Typography } from "@mui/material";
-import Box from "@mui/material/Box";
+import { Typography, Box } from "@mui/material";
 
 function SideBar(){
     return(
@@ -10,7 +9,7 @@ function SideBar(){
             sx={{flex: 1}}
             bgcolor="background.paper"
         >
-            <Typography variant="h4" noWrap fonrWeight="500">
+            <Typography variant="h4" noWrap fontWeight="500">
                 <Box sx={{textAlign: "center", m: 1}}>Dashboard</Box>
             </Typography>
         </Box>

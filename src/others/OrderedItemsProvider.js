@@ -3,12 +3,12 @@ import { useEffect, useState, useMemo } from "react";
 import { ORDER_ITEMS_LOCAL_STORAGE_KEY } from "../constant";
 import OrderedItemsContext from "./orderedItemsContext";
 
-export default function OrderedItemsProvider({children}){
-    const initialOrderedItems = JSON.parse(localStorage.getItem(ORDER_ITEMS_LOCAL_STORAGE_KEY) || "[]");
+function OrderedItemsProvider({children}){
+    const initialOrderedItems = JSON.parse(localStorage.getItem(ORDER_ITEMS_LOCAL_STORAGE_KEY)) || [];
     const [orderedItems, setOrderedItems] = useState(initialOrderedItems);
 
     const totalAmount = useMemo(() => {
-        if(OrderedItemsProvider.length < 1){
+        if(orderedItems.length < 1){
             return 0;
         }
 
@@ -61,3 +61,5 @@ export default function OrderedItemsProvider({children}){
 OrderedItemsProvider.propTypes = {
     children: PropTypes.node.isRequired,
 };
+
+export default OrderedItemsProvider;

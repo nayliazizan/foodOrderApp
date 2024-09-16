@@ -3,7 +3,7 @@ import { Snackbar, Alert } from "@mui/material";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-export default function SuccessAlert({openSnackbar, setOpenSnackbar}){
+function SuccessAlert({openSnackbar, setOpenSnackbar}){
     const [open, setOpen] = useState(false);
 
     useEffect(()=>{
@@ -48,3 +48,5 @@ SuccessAlert.propTypes = {
     openSnackbar: PropTypes.bool.isRequired,
     setOpenSnackbar: PropTypes.func.isRequired
 }
+
+export default SuccessAlert;

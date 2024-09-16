@@ -7,7 +7,7 @@ function Banner({handleClick}){
         <Box
             sx={{
                 backgroundImage: `url(${posterImg})`,
-                backgroundPosition: "50% 50%",
+                backgroundPosition: "50% 80%",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat"
             }}

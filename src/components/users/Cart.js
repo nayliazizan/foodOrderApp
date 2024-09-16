@@ -1,4 +1,4 @@
-import { Box, Button, Dialog, DialogContent, Divider, IconButton, Typography, DialogTitle, Stack } from "@mui/material";
+import { Box, Button, Dialog, DialogContent, Divider, IconButton, Typography, DialogTitle, Stack, DialogActions } from "@mui/material";
 import { Remove, Delete, Add } from "@mui/icons-material";
 import { useCartContext } from "../../others/cartContext";
 import { useOrderedItemsContext } from "../../others/orderedItemsContext";
@@ -130,14 +130,14 @@ function Cart({open, handleClose, handleSnackbarOpen}){
                     )}
                 </Box>
             </DialogContent>
-            <DialogContent>
+            <DialogActions>
                 <Button color="info" onClick={handleClose}>
                     Close
                 </Button>
                 <Button variant="contained" onClick={handleOrderClick} disabled={cartItems.length < 1}>
                     Order
                 </Button>
-            </DialogContent>
+            </DialogActions>
         </Dialog>
     )
 }

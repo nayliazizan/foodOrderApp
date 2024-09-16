@@ -1,5 +1,4 @@
-import { useMediaQuery } from "@mui/material";
-import Box from "@mui/material/Box";
+import { useMediaQuery, Box } from "@mui/material";
 import SideBar from "../components/admin/SideBar";
 import Main from "../components/admin/Main";
 

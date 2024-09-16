@@ -1,5 +1,5 @@
 import { Badge, Typography, useMediaQuery, Chip, Fab, Box } from "@mui/material";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import {ShoppingCart} from "@mui/icons-material";
 import { useCartContext } from "../../others/cartContext";
 import PropTypes from "prop-types";
 
@@ -26,11 +26,11 @@ function CartAppBar({handleClick}){
             >
                 {isSmallScreen ? (
                     <Badge badgeContent={itemsCount} color="info">
-                        <ShoppingCartIcon/>
+                        <ShoppingCart/>
                     </Badge>
                 ) : (
                     <>
-                        <ShoppingCartIcon sx={{mr: 1}} color="secondary"/>
+                        <ShoppingCart sx={{mr: 1}} color="secondary"/>
                         <Typography align="center" sx={{flexGrow: 1, mr: 1.5}}>
                             Your Cart
                         </Typography>

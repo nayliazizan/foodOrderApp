@@ -63,17 +63,14 @@ function Main(){
                                 md: "h3.fontSize"
                             }}
                         >
-                            Available Foods
+                            Available Bagels
                         </Typography>
                     </Box>
 
                     <Box 
                         flexGrow={2}
                         flexShrink={2}
-                        sx={{
-                            display: "flex",
-                            justifyContent: "space-evenly"
-                        }}
+                        sx={{display: "flex", justifyContent: "space-evenly"}}
                         width={"100%"}
                     >
                         <Box
@@ -89,9 +86,7 @@ function Main(){
                                 onClick={openOrderModal}
                                 size="large"
                                 fullWidth
-                                sx={{ 
-                                    fontSize: {xs: "0.8rem", sm: "1rem"}
-                                }}
+                                sx={{fontSize: {xs: "0.8rem", sm: "1rem"}}}
                             >
                                 View Order
                             </Button>
@@ -106,9 +101,7 @@ function Main(){
                                 onClick={handleClickOpenItemForm}
                                 size="large"
                                 fullWidth
-                                sx={{
-                                    fontSize: {xs: "0.8rem", sm: "1rem"}
-                                }}
+                                sx={{fontSize: {xs: "0.8rem", sm: "1rem"}}}
                             >
                                 Add Food
                             </Button>

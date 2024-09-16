@@ -3,7 +3,6 @@ import { useOrderedItemsContext } from "../../others/orderedItemsContext";
 import { Check } from "@mui/icons-material";
 import React from "react";
 
-
 function OrderItemTable(){
     const {orderedItems, removeOrderItem} = useOrderedItemsContext();
 
@@ -14,15 +13,15 @@ function OrderItemTable(){
                     <TableRow>
                         <TableCell>Customer ID</TableCell>
                         <TableCell align="left">Food Ordered</TableCell>
-                        <TableCell align="left">Price</TableCell>
-                        <TableCell align="left">Quantity</TableCell>
-                        <TableCell align="left">Total Price</TableCell>
-                        <TableCell align="left">Order Served</TableCell>
+                        <TableCell align="center">Price</TableCell>
+                        <TableCell align="center">Quantity</TableCell>
+                        <TableCell align="center">Total Price</TableCell>
+                        <TableCell align="center">Order Served</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {orderedItems.map((customer)=> (
-                        <React.Fragement key={customer.customerId}>
+                        <React.Fragment key={customer.customerId}>
                             {customer.orderedItems.map((orderedItem, index)=> (
                                 <TableRow key={orderedItem.id} sx={{"&:last-child td, &:last-child th": {border: 0}}}>
                                     {index === 0 ? (
@@ -46,7 +45,7 @@ function OrderItemTable(){
                                 <TableCell align="right" colSpan={2}>Total Amount:</TableCell>
                                 <TableCell align="center" colSpan={1}>{customer.totalPriceForAllItems}</TableCell>
                             </TableRow>
-                        </React.Fragement>
+                        </React.Fragment>
                     ))}
                 </TableBody>
             </Table>

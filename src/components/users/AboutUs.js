@@ -40,7 +40,9 @@ function AboutUs({handleClick}){
                             artisanal bagels. Our bagels are made with the finest ingredients 
                             and baked to perfection.
                         </Typography>
+                    </Box>
 
+                    <Box>
                         <Typography
                             variant="body1"
                             fontWeight={600}

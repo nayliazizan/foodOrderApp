@@ -71,7 +71,7 @@ function Users(){
                                     variant="h5"
                                     fontSize={{xs: "1.5rem", sm: "2rem"}}
                                 >
-                                    Available Foods
+                                    Available Bagels
                                 </Typography>
                             </Grid>
 

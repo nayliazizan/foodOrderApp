@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
 import PropTypes from "prop-types";
-import {Swiper, SwiperSlide} from "swiper/react"; //need to recheck
-import {Pagination} from "swiper/modules"; //need to recheck
-import 'swiper/swiper-bundle.css';
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Pagination} from "swiper/modules";
+import "swiper/css"; 
+import './customSlideshows.css';
 
 function Slideshows({images}){
     return(

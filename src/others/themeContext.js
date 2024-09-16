@@ -1,12 +1,12 @@
 import { createContext, useContext } from "react";
-import { createTheme } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 
-const ThemeContext = createContext({
+const themeContext = createContext({
     theme: createTheme(),
     mode: "light",
     toggleColorMode: () => {}
 });
 
-export default ThemeContext;
+export default themeContext;
 
-export const useThemeContext = () => useContext(ThemeContext);
+export const useThemeContext = () => useContext(themeContext);
