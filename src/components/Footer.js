@@ -17,22 +17,19 @@ function Footer(){
                 <ThemeSwitcher
                     sx={{
                         color: reversedTextColor,
-                        "&:hover": {
-                            bgcolor: reversedTextColor,
-                            color: reversedBgColor
-                        }
+                        "&:hover": {bgcolor: reversedTextColor, color: reversedBgColor}
                     }}
                 />
                 <Box
                     component="img"
                     sx={{
-                        width: 300,
-                        height: 300,
-                        maxHeight: {xs: 150, md: 250, lg: 300},
-                        maxWidth: {xs: 150, md: 250, lg: 300}
+                        width: "150px",
+                        height: "150px",
+                        maxHeight: {xs: 75, md: 125, lg: 150},
+                        maxWidth: {xs: 75, md: 125, lg: 150}
                     }}
                     alt="footer logo"
-                    src={mode === "light" ? bagelDefault : bagelDark}
+                    src={mode === "light" ? bagelDark : bagelDefault}
                     loading="lazy"
                 />
                 <Button variant="contained" sx={{width: "30%"}} onClick={togglePage}>

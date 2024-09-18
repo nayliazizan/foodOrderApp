@@ -23,7 +23,7 @@ export function useColorTheme(){
     return {
         theme: modifiedTheme,
         mode,
-        toggleTheme
+        switchTheme
     }
 }
 

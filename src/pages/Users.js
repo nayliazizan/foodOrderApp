@@ -17,12 +17,12 @@ function Users(){
 
     function scrollToSection(){
         if(!sectionRef.current) return;
-        sectionRef.current.scrollToView({behavior: "smooth"});
+        sectionRef.current.scrollIntoView({behavior: "smooth"});
     }
 
     function scrollToMenuItems(){
         if(!menuItemRef.current) return;
-        menuItemRef.current.scrollToView({behavior: "smooth"});
+        menuItemRef.current.scrollIntoView({behavior: "smooth"});
     }
 
     function handleCartOpen(){
