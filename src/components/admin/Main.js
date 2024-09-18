@@ -58,10 +58,11 @@ function Main(){
                             component={"h1"}
                             textTransform={"uppercase"}
                             fontSize={{
-                                xs: "h6.fontSize",
-                                sm: "h6.fontSize",
-                                md: "h3.fontSize"
+                                xs: "0.75rem",
+                                sm: "1rem",
+                                md: "1.5rem"
                             }}
+                            noWrap
                         >
                             Available Bagels
                         </Typography>

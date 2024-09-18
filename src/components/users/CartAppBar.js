@@ -13,7 +13,7 @@ function CartAppBar({handleClick}){
             variant="extended"
             aria-label="food-cart"
             onClick={handleClick}
-            sx={{position: "fixed", top: "30px", right: "30px"}}
+            sx={{position: "fixed", top: "30px", right: "30px", backgroundColor: "rgba(3, 138, 255, 0.7)"}}
             color="primary"
         >
             <Box
@@ -31,7 +31,10 @@ function CartAppBar({handleClick}){
                 ) : (
                     <>
                         <ShoppingCart sx={{mr: 1}} color="secondary"/>
-                        <Typography align="center" sx={{flexGrow: 1, mr: 1.5}}>
+                        <Typography 
+                            align="center" 
+                            sx={{flexGrow: 1, mr: 1.5}}
+                        >
                             Your Cart
                         </Typography>
                         <Chip color="secondary" label={itemsCount}/>
