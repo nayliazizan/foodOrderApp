@@ -1,7 +1,7 @@
 import { Grid, Link, Typography, Stack, Box } from "@mui/material";
 import PropTypes from "prop-types";
 import images from "../users/ImgForSlideshows";
-import Slideshows from "./Slideshows";
+import ImgGallery from "./ImgGallery";
 
 function AboutUs({handleClick}){
     return(
@@ -70,7 +70,7 @@ function AboutUs({handleClick}){
                             handleClick();
                         }}
                     >
-                        <Typography color="text.secondary" variant="body1">
+                        <Typography color="text.secondary" variant="body1" fontWeight={"bold"}>
                             SEE OUR BAGELS
                         </Typography>
                     </Link>
@@ -78,7 +78,7 @@ function AboutUs({handleClick}){
             </Grid>
 
             <Grid item xs={12} sm={7} marginTop={{xs: "1rem", sm: "0"}}>
-                <Slideshows images={images}/>
+                <ImgGallery images={images}/>
             </Grid>
         </Grid>
     );

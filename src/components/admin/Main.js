@@ -1,10 +1,11 @@
-import { Box, Button, Divider, Typography } from "@mui/material";
+import { Box, Button, Divider, Typography, Fab } from "@mui/material";
 import { useState } from "react";
 import Meals from "../Meals";
 import DeletePopUp from "./DeletePopUp";
 import CartProvider from "../../others/CartProvider";
 import FoodForm from "./FoodForm";
-import OrderPopUp from "./OrderPopUp"
+import OrderPopUp from "./OrderPopUp";
+import { AddCircleOutline } from "@mui/icons-material";
 
 function Main(){
     const [openAddItemForm, setOpenItemForm] = useState(false);
@@ -47,7 +48,7 @@ function Main(){
                 >
                     <Box
                         display={"flex"}
-                        justifyContent={"space-between"}
+                        justifyContent={"center"}
                         alignItems={"center"}
                         height="100%"
                         flexGrow={1}
@@ -67,47 +68,6 @@ function Main(){
                             Available Bagels
                         </Typography>
                     </Box>
-
-                    <Box 
-                        flexGrow={2}
-                        flexShrink={2}
-                        sx={{display: "flex", justifyContent: "space-evenly"}}
-                        width={"100%"}
-                    >
-                        <Box
-                            sx={{
-                                width: "100%",
-                                display: "flex",
-                                justifyContent: "center",
-                                paddingX: {xs: 0, sm: 1}
-                            }}
-                        >
-                            <Button
-                                variant="contained"
-                                onClick={openOrderModal}
-                                size="large"
-                                fullWidth
-                                sx={{fontSize: {xs: "0.8rem", sm: "1rem"}}}
-                            >
-                                View Order
-                            </Button>
-                        </Box>
-
-                        <Box 
-                            width={"100%"}
-                            sx={{ width: "100%", display: "flex", justifyContent: "center", paddingX: 1}}
-                        >
-                            <Button
-                                variant="contained"
-                                onClick={handleClickOpenItemForm}
-                                size="large"
-                                fullWidth
-                                sx={{fontSize: {xs: "0.8rem", sm: "1rem"}}}
-                            >
-                                Add Food
-                            </Button>
-                        </Box>
-                    </Box>
                 </Box>
 
                 <Divider orientation="horizontal" sx={{ borderBottomWidth: 2, marginY: 2}}/>
@@ -122,6 +82,21 @@ function Main(){
                     />
                 </CartProvider>
             </Box>
+
+            <Fab 
+                variant="extended"
+                color="primary"
+                sx={{
+                    position: "fixed",
+                    top: "30px",
+                    right: "30px",
+                    backgroundColor: "rgba(0,123,255, 0.7)"
+                }}
+                onClick={handleClickOpenItemForm}
+            >
+                <AddCircleOutline sx={{mr: 1}}/>
+                Add Food
+            </Fab>
 
             <FoodForm
                 key={`${editItemId}-${openAddItemForm}-${editItemId !== null}`}

@@ -7,16 +7,15 @@ function OrderItemTable(){
     const {orderedItems, removeOrderItem} = useOrderedItemsContext();
 
     return(
-        <TableContainer component={Paper}>
-            <Table sx={{minWidth: 650}} stickyHeader aria-label="sticky table">
+        <TableContainer component={Paper} sx={{border: "3px solid #28282B"}}>
+            <Table sx={{minWidth: 500}} stickyHeader aria-label="sticky table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Customer ID</TableCell>
+                        <TableCell>No</TableCell>
                         <TableCell align="left">Food Ordered</TableCell>
                         <TableCell align="center">Price</TableCell>
                         <TableCell align="center">Quantity</TableCell>
                         <TableCell align="center">Total Price</TableCell>
-                        <TableCell align="center">Order Served</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -26,23 +25,18 @@ function OrderItemTable(){
                                 <TableRow key={orderedItem.id} sx={{"&:last-child td, &:last-child th": {border: 0}}}>
                                     {index === 0 ? (
                                         <TableCell rowSpan={customer.orderedItems.length}>
-                                            {customer.customerId}
+                                            {index + 1}
                                         </TableCell>
                                     ): null}
                                     <TableCell>{orderedItem.name}</TableCell>
                                     <TableCell align="center">{orderedItem.price}</TableCell>
                                     <TableCell align="center">{orderedItem.quantity}</TableCell>
                                     <TableCell align="center">{orderedItem.price * orderedItem.quantity}</TableCell>
-                                    <TableCell align="center">
-                                        <IconButton aria-label="delete" onClick={()=> {removeOrderItem(customer.customerId, orderedItem.id)}}>
-                                            <Check fontSize="inherit"/>
-                                        </IconButton>
-                                    </TableCell>
+                                    
                                 </TableRow>
                             ))}
                             <TableRow>
-                                <TableCell colSpan={3}>{customer.customerId}</TableCell>
-                                <TableCell align="right" colSpan={2}>Total Amount:</TableCell>
+                                <TableCell align="right" colSpan={4}>Total Amount:</TableCell>
                                 <TableCell align="center" colSpan={1}>{customer.totalPriceForAllItems}</TableCell>
                             </TableRow>
                         </React.Fragment>
