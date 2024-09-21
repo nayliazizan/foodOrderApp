@@ -6,8 +6,9 @@ import bagelDark from "../stuffs/bagel-dark.svg";
 import ThemeSwitcher from "../others/ThemeSwitcher";
 
 function Footer(){
-    const {switchPage, togglePage} = useItemsContext();
-    const {theme, mode} = useThemeContext();
+    const {switchPage, togglePage} = useItemsContext(); //access current page context n function to toggle between them
+    const {theme, mode} = useThemeContext(); //access the current theme n mode from theme context
+    //for reversed background and text colors for contrast
     const reversedBgColor = theme.palette.getContrastText(theme.palette.background.default);
     const reversedTextColor = theme.palette.getContrastText(theme.palette.text.primary);
 

@@ -4,7 +4,7 @@ import { Check } from "@mui/icons-material";
 import React from "react";
 
 function OrderItemTable(){
-    const {orderedItems, removeOrderItem} = useOrderedItemsContext();
+    const {orderedItems} = useOrderedItemsContext();
 
     return(
         <TableContainer component={Paper} sx={{border: "3px solid #28282B"}}>

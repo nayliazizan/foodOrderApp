@@ -12,29 +12,23 @@ function Main(){
     const [editItemId, setEditItemId] = useState(null);
     const [openDeletePopUp, setOpenDeletePopUp] = useState(false);
     const [deleteItemId, setDeleteItemId] = useState(null);
-    const [isOrderModalOpen, setOpenOrderModal] = useState(false);
 
+    //open the form to add new bagel
     function handleClickOpenItemForm(){
         setOpenItemForm(true);
         setEditItemId(null);
     }
 
+    //open the form to edit existing bagel
     function handleEditItem(itemId){
         setOpenItemForm(true);
         setEditItemId(itemId);
     }
 
+    //open the confirmation card of the bagel
     function handleDeleteItem(itemId){
         setOpenDeletePopUp(true);
         setDeleteItemId(itemId);
-    }
-
-    function openOrderModal(){
-        setOpenOrderModal(true);
-    }
-
-    function closeOrderModal(){
-        setOpenOrderModal(false);
     }
 
     return(
@@ -105,8 +99,6 @@ function Main(){
                 isEdit={editItemId !== null}
                 editItemId={editItemId}
             />
-
-            <OrderPopUp open={isOrderModalOpen} onClose={closeOrderModal}/>
         </Box>
     )
 }

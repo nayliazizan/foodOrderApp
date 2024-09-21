@@ -3,7 +3,7 @@ import OrderItemTable from "./orderItemTable";
 import { useOrderedItemsContext } from "../../others/orderedItemsContext";
 
 function SideBar(){
-    const {orderedItems} = useOrderedItemsContext();
+    const {orderedItems} = useOrderedItemsContext(); //access ordered items
     return(
         <Box
             display="flex"

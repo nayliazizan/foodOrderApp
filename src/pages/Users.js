@@ -11,9 +11,8 @@ import SuccessAlert from "../components/users/SuccessAlert";
 function Users(){
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [openSnackbar, setOpenSnackbar] = useState(false);
-
-    const sectionRef = useRef(null);
-    const menuItemRef = useRef(null);
+    const sectionRef = useRef(null); //refer to AboutUs section for smooth scrolling
+    const menuItemRef = useRef(null); //refer to bagels catalogue section for smooth scrolling
 
     function scrollToSection(){
         if(!sectionRef.current) return;
@@ -25,10 +24,12 @@ function Users(){
         menuItemRef.current.scrollIntoView({behavior: "smooth"});
     }
 
+    //pop up cart card
     function handleCartOpen(){
         setIsModalOpen(true);
     }
 
+    //close cart card
     function handleCartClose(_event, reason){
         if(reason === "escapeKeyDown" || reason === "backdropClick"){
             return;
